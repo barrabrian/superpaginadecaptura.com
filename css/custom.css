@@ -1,0 +1,228 @@
+.modalForm {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10000000;
+    display: none;
+    font-family: 'Roboto Condensed', 'Arial', sans-serif
+}
+
+.modalForm input {
+    font-family: 'Roboto Condensed', 'Arial', sans-serif
+}
+
+.modalFormOverlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.8)
+}
+
+.modalFormContent {
+    width: calc(100% - (2rem * 2));
+    max-width: 460px;
+    height: auto;
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 4px;
+    background: #fff;
+    color: #2c2c2c;
+    text-align:center
+}
+
+.buttonCloseModal {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display:table
+}
+
+.buttonCloseModal::before, .buttonCloseModal::after {
+    content: "";
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100px;
+    background: #8492a8;
+    display:table
+}
+
+.buttonCloseModal::before {
+    transform:translate(-50%, -50%) rotate(-45deg)
+}
+
+.buttonCloseModal::after {
+    transform:translate(-50%, -50%) rotate(45deg)
+}
+
+.titleForm {
+    font-size: 22px;
+    line-height: 150%;
+    margin: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #0657fe;
+    font-weight: bold;
+    text-align:center
+}
+
+.textForm {
+    font-size: 18px;
+    line-height: 150%;
+    margin: 0px;
+    margin-bottom: 20px;
+    display: table;
+    color: #000000;
+    font-weight:normal
+}
+
+.boxInput {
+    width: 100%;
+    position: relative;
+    display: table;
+    margin:0 auto 1rem
+}
+
+.boxInput label {
+    margin-bottom: calc(1rem / 3);
+    font-size: 18px;
+    display:table
+}
+
+.boxInput input {
+    width: 100%;
+    min-height: 45px;
+    display: table;
+    font-size: inherit;
+    font-weight: normal;
+    box-sizing: border-box;
+    outline: 0;
+    border: solid 1.5px #c4cedd;
+    border-radius: calc(1rem / 3.4);
+    padding: calc(1rem / 2) 0 calc(1rem / 2) calc(1rem / 2);
+    color: #6f7988;
+    background: rgba(0, 0, 0, 0);
+    overflow:visible
+}
+
+.boxInput.flex {
+    display:flex
+}
+
+.boxInput.flex div {
+    width:49%
+}
+
+.cellphone {
+    margin-left:2%
+}
+
+.boxInput input:focus {
+    border: solid 1.5px #0657fe;
+    box-shadow:0px 0px 8px 0px rgba(0, 0, 0, 0.15)
+}
+
+.boxInput input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    box-shadow: 0 0 0px 1000px white inset;
+    background-image:url(https://lp1.empiricus.com.br/assets/svgs-default/email-black.svg)
+}
+
+.checkAs {
+    position: absolute;
+    opacity:0
+}
+
+.iCheckbox {
+    display:none
+}
+
+.btn {
+    display: block;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    padding: 20px 10px;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #0657fe;
+    background-size:800% 800%
+}
+
+.btn:hover {
+    color:#fff !important
+}
+
+.btn:hover {
+    text-decoration: underline;
+    background-color:#2031ef
+}
+
+.infoSubmit {
+    font-size: 14px;
+    line-height: 21px;
+    color: #8a98ad;
+    text-align:center
+}
+
+.infoSubmit a {
+    color:#333
+}
+
+#bt-play {
+position: absolute;
+z-index: 3;
+width: 100%;
+height: 13.5%;
+}
+
+#bt-play2 {
+position: absolute;
+z-index: 3;
+width: 15%;
+height: 13%;
+bottom: 0;
+right: 0;
+}
+
+
+@media only screen and (max-width: 530px) and (max-width: 960px) {
+  #bt-play {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 25%;
+  }
+
+  #bt-play2 {
+  position: absolute;
+  z-index: 3;
+  width: 30%;
+  height: 20%;
+  bottom: 0;
+  right: 0;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+    .modalFormContent {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+}

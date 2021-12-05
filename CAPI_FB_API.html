@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+
+    <script type="text/javascript">
+
+    var url = "https://graph.facebook.com/v11.0/257872645378621/events";
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+       }};
+
+    console.log(Math.floor(Date.now() / 1000));
+
+    var client_ip_address;
+    fetch('http://ip-api.com/json')
+      .then( response => response.json() )
+      .then( data => { client_ip_address = data.query
+
+        var data = `data=[
+               {
+                 "event_name": "ViewContent",
+                 "event_time": ` + Math.floor(Date.now() / 1000) + `,
+                 "action_source": "website",
+                 "event_source_url": "http://autoescolacantu.com.br/orcamento/",
+                 "user_data": {
+                   "client_ip_address": "` + client_ip_address + `",
+                   "client_user_agent": "HAUPTDATA"
+                 }
+               }
+             ]&access_token=EAAPFTYUATysBAH1aXiTyRvO2Ddgf1ZCYxRPAnkeFZBn4si9PiJpZC9xfUysg5vFwrn9T6q97rhAj9KVkNGIhb2uC6IZBka0NYZBRkYMWUmbSjwQxPK556BQe33OUuf3sAskZBZAQFOaZAqGDZB3yTxv6FKZA3lO353XjFI5qDaYoEvBTPnwcEcYWsbDaT7ZCuI2GwsZD`;
+
+        xhr.send(data);
+
+
+      });
+
+    </script>
+
+
+  </head>
+  <body>
+
+  </body>
+</html>
